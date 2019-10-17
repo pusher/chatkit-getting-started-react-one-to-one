@@ -14,12 +14,10 @@ function App() {
   return (
     <div className="App">
       {userId && otherUserId ? (
-        <>
-          <div className="App__chatwindow">
-            <UserList userId={userId} />
-            <Chat />
-          </div>
-        </>
+        <div className="App__chatwindow">
+          <UserList userId={userId} />
+          <Chat />
+        </div>
       ) : (
         <Login />
       )}

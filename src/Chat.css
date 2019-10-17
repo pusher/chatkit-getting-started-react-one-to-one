@@ -21,13 +21,23 @@
 
 .Chat__titlebar__details {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .Chat__titlebar__details__presence {
   font-size: 0.8em;
-  opacity: 0.5;
+  opacity: 0.75;
   margin-top: 0.2rem;
+}
+
+.Chat__titlebar__details__presence::before {
+  content: ' ';
+  height: 10px;
+  width: 10px;
+  margin-right: 10px;
+  background-color: #3adf71;
+  border-radius: 50%;
+  display: inline-block;
 }
 
 .Chat__messages {

@@ -7,6 +7,8 @@ import defaultAvatar from './default-avatar.png';
 function Chat(props) {
   const [pendingMessage, setPendingMessage] = useState('');
   const messageList = React.createRef();
+  const urlParams = new URLSearchParams(window.location.search);
+  const otherUserId = urlParams.get('otherUserId');
 
   const handleMessageKeyDown = event => {
     if (event.key === 'Enter') {
@@ -56,7 +58,8 @@ function Chat(props) {
         />
         <div className="Chat__titlebar__details">
           {/*TODO: Get other user's name from Chatkit */}
-          <span>[OTHER USERS NAME HERE]</span>
+          <span className="Chat__titlebar__details__presence" />
+          <span>{otherUserId}</span>
         </div>
       </div>
       <div className="Chat__messages" ref={messageList}>
